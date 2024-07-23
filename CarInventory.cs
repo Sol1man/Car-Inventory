@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,35 +10,27 @@ namespace CarsApp
 {
     internal class CarInventory
     {
+        List<Car> carList = new List<Car>();
         private static int nextId = 1;
 
-        public void DisplayCar(Car car)
-        {
-            Window.CenterText("Car Details");
-            Console.WriteLine("Car Id:" + car.id);
-            Console.WriteLine("Car Name: " + car.name);
-            Console.WriteLine("Car Color: " + car.color);
-            Console.WriteLine("Car Type: " + car.type);
-            Console.WriteLine("Car Year: " + car.year );
-            Console.WriteLine("Car Price: " + car.price + "$");
-        }
+
         public void DisplayAllCars(List<Car> carList)
         {
             foreach (Car car in carList)
             {
                 Window.CenterText("All Cars Details" );
                 Window.CenterText($"There are {carList.Count} Cars in the  inventory");
-                Window.CenterText("Car Id:" + car.id);
-                Console.WriteLine("Car Name: " + car.name);
-                Console.WriteLine("Car Color: " + car.color);
-                Console.WriteLine("Car Type: " + car.type);
-                Console.WriteLine("Car Year: " + car.year);
-                Console.WriteLine("Car Price: " + car.price + "$");
+                Window.CenterText("Car Id:" + car.Id);
+                Console.WriteLine("Car Name: " + car.Name);
+                Console.WriteLine("Car Color: " + car.Color);
+                Console.WriteLine("Car Type: " + car.Type);
+                Console.WriteLine("Car Year: " + car.Year);
+                Console.WriteLine("Car Price: " + car.Price + "$");
                 Window.CenterText("---------------------");
                 Console.WriteLine("");
             }
         }
-        public Car Add()
+        public Car CreateCar()
         {
             Console.Clear();
             Window main = new Window();
@@ -44,30 +38,81 @@ namespace CarsApp
             Console.Write("Name: ");
             string name = Console.ReadLine();
             Console.Write("Color: ");
-            string color = Console.ReadLine();
+            Colors color = Car.SetColor();
             Console.Write("Type: ");
-            string type = Console.ReadLine();
+            Types type = Car.SetType();
             Console.Write("Year: ");
             int year = Convert.ToInt32(Console.ReadLine());
             Console.Write("Price: ");
             double price = Convert.ToDouble(Console.ReadLine());
 
             int id = nextId;
+           /* if (Car.Id == null) 
+            { 
+            }*/
             Car car = new Car(nextId, name, color, type, year, price);
             nextId++;
             return car;
         }
-        public void Edit()
+        public void AddCar(Car car)
+        {
+            if (car == null)
+            {
+                throw new ArgumentNullException(nameof(car), "Car cannot be null");
+            }
+            carList.Add(car);
+            Console.WriteLine("Car Added Successfully!");
+            carList.Add(car);
+        }
+
+        public bool EditCar(int id)
+        {
+            //search for the car in cars list using the ID
+               Car carToEdit = carList.FirstOrDefault(c => c.Id == id);   
+
+            //Check if car id not found
+            if (carToEdit == null)
+            {
+                Console.WriteLine("Car not found.");
+                return false;
+            }
+
+            //adding new car name (or leave it the same)
+
+            Console.Write("New Name (leave blank to keep the current name): ");
+            string newName = Console.ReadLine();
+            if (!string.IsNullOrEmpty(newName))
+            {
+                carToEdit.Name = newName;
+            }
+
+            //adding new car data
+            Console.Write("New Color: ");
+            Colors newColor = Car.SetColor();
+            Console.Write("New Type: ");
+            Types newType = Car.SetType();
+            Console.Write("New Year: ");
+            int newYear = Convert.ToInt32(Console.ReadLine());
+            Console.Write("New Price: ");
+            double newPrice = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Car Edited Successfully!");
+            return true;
+        }
+        public void EditCarwindow()
+        {
+            Console.Clear();
+            Window window = new Window();
+            Console.WriteLine("Editing Car data:");
+            Console.Write("Enter Car ID: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+            EditCar(id);
+        }
+        public void DeleteCar()
         {
             Window window = new Window();
 
         }
-        public void Delete()
-        {
-            Window window = new Window();
-
-        }
-        public void Search()
+        public void SearchCar()
         {
             Window window = new Window();
 

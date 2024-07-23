@@ -18,6 +18,7 @@ namespace CarsApp
             CenterText("The Wheel Deal");
             CenterText("Find Your Perfect Car");
         }
+        //TO DO find a way with lodical statments
         public static void CenterText(string text)
         {
             int space = Console.WindowWidth - text.Length;
@@ -25,23 +26,20 @@ namespace CarsApp
             Console.Write(new string(' ', spaceBeforeText));
             Console.WriteLine(text);
         }
-        public void mainMenu()
+        public void MainMenu()
         {
             Console.Clear();
             Window main = new Window();
-            Console.WriteLine("To ADD a new car Press 1");
-            Console.WriteLine("To EDIT an existing car Press 2");
-            Console.WriteLine("To DELETE an existing car Press 3");
-            Console.WriteLine("To SEARCH for an existing car Press 4");
+            Console.WriteLine("1 - ADD a new car");
+            Console.WriteLine("2 - EDIT an existing car");
+            Console.WriteLine("3 - DELETE an existing car");
+            Console.WriteLine("4 - SEARCH for an existing car");
         }
         public char GetUserInput()
         {
-
             ConsoleKeyInfo user_input = Console.ReadKey(true);
             return user_input.KeyChar;
-
         }
-
 
     }
 

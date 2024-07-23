@@ -2,21 +2,22 @@
 {
     internal class Program
     {
+        //inicializing cars list
         static void Main(string[] args)
         {
-            //inicializing cars list
+
             List<Car> carList = new List<Car>();
            //setting window UI 
             Window window = new Window();
-            window.mainMenu();
-            char user_input = window.GetUserInput();
+            window.MainMenu();
+            char user_input = Window.GetUserInput();
             CarInventory inv = new CarInventory();
 
             switch (user_input)
             {
                case '1':
 
-                   carList.Add(inv.Add());
+                   carList.Add(inv.CreateCar());
                    break;
                case '2':
                    inv.Edit();
@@ -35,9 +36,9 @@
             for (int i = 0; i < carList.Count; i++) 
                 {
                 Car car = carList[i];
-                Console.WriteLine(carList[i].name);
-                Console.WriteLine(carList[i].color);
-                Console.WriteLine(carList[i].type);
+                Console.WriteLine(carList[i].Name);
+                Console.WriteLine(carList[i].Color);
+                Console.WriteLine(carList[i].Type);
             }
             /* Car car1 = new Car();
              car1.name = "Ford";
