@@ -12,3 +12,4 @@ D:\Projects\Cars App\CarsApp\CarsApp\obj\Debug\net8.0\refint\CarsApp.dll
 D:\Projects\Cars App\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.pdb
 D:\Projects\Cars App\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.genruntimeconfig.cache
 D:\Projects\Cars App\CarsApp\CarsApp\obj\Debug\net8.0\ref\CarsApp.dll
+D:\Projects\Cars App\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.sourcelink.json

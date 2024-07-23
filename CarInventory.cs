@@ -10,16 +10,21 @@ namespace CarsApp
 {
     internal class CarInventory
     {
-        List<Car> carList = new List<Car>();
-        private static int nextId = 1;
+        static List<Car> carList = new List<Car>();
+        static int nextId = 1;
 
 
         public void DisplayAllCars()
         {
-            foreach (Car car in carList)
+            if (carList.Count == 0)
             {
+                Console.WriteLine("No Cars at the Inventory");
+                return;
+            }
                 Window.CenterText("All Cars Details" );
                 Window.CenterText($"There are {carList.Count} Cars in the  inventory");
+            foreach (Car car in carList)
+            {
                 Window.CenterText("Car Id:" + car.Id);
                 Console.WriteLine("Car Name: " + car.Name);
                 Console.WriteLine("Car Color: " + car.Color);
@@ -32,8 +37,6 @@ namespace CarsApp
         }
         public Car CreateCar()
         {
-            Console.Clear();
-            Window main = new Window();
             Console.WriteLine("Adding New Car:");
             Console.Write("Name: ");
             string name = Console.ReadLine();
@@ -62,7 +65,6 @@ namespace CarsApp
             }
             carList.Add(car);
             Console.WriteLine("Car Added Successfully!");
-            carList.Add(car);
         }
 
         public void EditCar(int id)
@@ -74,6 +76,7 @@ namespace CarsApp
             if (carToEdit == null)
             {
                 Console.WriteLine("Car not found.");
+                return;
             }
 
             //adding new car name (or leave it the same)
@@ -93,9 +96,11 @@ namespace CarsApp
             int newYear = Convert.ToInt32(Console.ReadLine());
             Console.Write("New Price: ");
             double newPrice = Convert.ToDouble(Console.ReadLine());
+            //TODO change car data with new car data 
+            //Car newCar = Car()
             Console.WriteLine("Car Edited Successfully!");
         }
-        public void EditCarWindow()
+  /*      public void EditCarWindow()
         {
             Console.Clear();
             Window window = new Window();
@@ -103,7 +108,7 @@ namespace CarsApp
             Console.Write("Enter Car ID: ");
             int id = Convert.ToInt32(Console.ReadLine());
             EditCar(id);
-        }
+        }*/
         public void DeleteCar(int id)
         {
             //search for the car in cars list using the ID

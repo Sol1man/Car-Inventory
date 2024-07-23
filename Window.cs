@@ -30,15 +30,46 @@ namespace CarsApp
         {
             Console.Clear();
             Window main = new Window();
-            Console.WriteLine("1 - ADD a new car");
-            Console.WriteLine("2 - EDIT an existing car");
-            Console.WriteLine("3 - DELETE an existing car");
-            Console.WriteLine("4 - SEARCH for an existing car");
+            Console.WriteLine("1. ADD a new car");
+            Console.WriteLine("2. EDIT an existing car");
+            Console.WriteLine("3. DELETE an existing car");
+            Console.WriteLine("4. SEARCH for an existing car");
+            Console.WriteLine("5. DISPLAY all existing cars");
+            Console.WriteLine("6. EXIT");
+
         }
-        public char GetUserInput()
+        public static char GetUserInput()
         {
             ConsoleKeyInfo user_input = Console.ReadKey(true);
             return user_input.KeyChar;
+        }
+        public void RenderAddWindow()
+        {
+            Window window = new Window();
+            Console.BackgroundColor = ConsoleColor.DarkGray;
+            Console.Clear();
+
+        }
+        public void RenderEditWindow()
+        {
+            Window window = new Window();
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.Clear();
+
+        }
+        public void RenderDeleteWindow()
+        {
+            Window window = new Window();
+            Console.BackgroundColor = ConsoleColor.DarkYellow;
+            Console.Clear();
+
+        }
+        public void RenderSearchWindow()
+        {
+            Window window = new Window();
+            Console.BackgroundColor = ConsoleColor.DarkMagenta;
+            Console.Clear();
+
         }
 
     }
