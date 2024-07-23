@@ -10,36 +10,32 @@
            //setting window UI 
             Window window = new Window();
             window.MainMenu();
+            CarInventory inventory = new CarInventory();
             char user_input = Window.GetUserInput();
-            CarInventory inv = new CarInventory();
 
             switch (user_input)
             {
                case '1':
-
-                   carList.Add(inv.CreateCar());
+                   carList.Add(inventory.CreateCar());
                    break;
                case '2':
-                   inv.Edit();
-                   break;
+                    inventory.EditCarWindow();
+                    break;
                case '3':
-                   inv.Delete();
-                   break;
+                    //inventory.Delete();
+                    break;
                case '4':
-                   inv.Search();
-                   break;
+                    //inventory.Search();
+                    break;
+                case '5':
+                    inventory.DisplayAllCars();
+                    break;
                default:
                     Console.WriteLine("Invalid input, please choose from the given list.");
                     break;
 
             }
-            for (int i = 0; i < carList.Count; i++) 
-                {
-                Car car = carList[i];
-                Console.WriteLine(carList[i].Name);
-                Console.WriteLine(carList[i].Color);
-                Console.WriteLine(carList[i].Type);
-            }
+
             /* Car car1 = new Car();
              car1.name = "Ford";
              car1.year = 1990;
@@ -47,10 +43,6 @@
              Console.WriteLine(car1.year); 
              Console.WriteLine(car1.color);
              Console.Read(); */
-
-            //window.mainMenu();
-
-
 
         }
     }

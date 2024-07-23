@@ -14,7 +14,7 @@ namespace CarsApp
         private static int nextId = 1;
 
 
-        public void DisplayAllCars(List<Car> carList)
+        public void DisplayAllCars()
         {
             foreach (Car car in carList)
             {
@@ -65,7 +65,7 @@ namespace CarsApp
             carList.Add(car);
         }
 
-        public bool EditCar(int id)
+        public void EditCar(int id)
         {
             //search for the car in cars list using the ID
                Car carToEdit = carList.FirstOrDefault(c => c.Id == id);   
@@ -74,11 +74,9 @@ namespace CarsApp
             if (carToEdit == null)
             {
                 Console.WriteLine("Car not found.");
-                return false;
             }
 
             //adding new car name (or leave it the same)
-
             Console.Write("New Name (leave blank to keep the current name): ");
             string newName = Console.ReadLine();
             if (!string.IsNullOrEmpty(newName))
@@ -96,9 +94,8 @@ namespace CarsApp
             Console.Write("New Price: ");
             double newPrice = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Car Edited Successfully!");
-            return true;
         }
-        public void EditCarwindow()
+        public void EditCarWindow()
         {
             Console.Clear();
             Window window = new Window();
@@ -107,9 +104,18 @@ namespace CarsApp
             int id = Convert.ToInt32(Console.ReadLine());
             EditCar(id);
         }
-        public void DeleteCar()
+        public void DeleteCar(int id)
         {
-            Window window = new Window();
+            //search for the car in cars list using the ID
+            Car carToDelete = carList.FirstOrDefault(c => c.Id == id);
+
+            //Check if car id not found
+            if (carToDelete == null)
+            {
+                Console.WriteLine("Car not found.");
+            }
+            carList.Remove(carToDelete);
+            Console.WriteLine("Car Deleted Successfully!");
 
         }
         public void SearchCar()
