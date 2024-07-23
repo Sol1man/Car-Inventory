@@ -1,0 +1,14 @@
+D:\Projects\Cars App\CarsApp\CarsApp\bin\Debug\net8.0\CarsApp.exe
+D:\Projects\Cars App\CarsApp\CarsApp\bin\Debug\net8.0\CarsApp.deps.json
+D:\Projects\Cars App\CarsApp\CarsApp\bin\Debug\net8.0\CarsApp.runtimeconfig.json
+D:\Projects\Cars App\CarsApp\CarsApp\bin\Debug\net8.0\CarsApp.dll
+D:\Projects\Cars App\CarsApp\CarsApp\bin\Debug\net8.0\CarsApp.pdb
+D:\Projects\Cars App\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Cars App\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.AssemblyInfoInputs.cache
+D:\Projects\Cars App\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.AssemblyInfo.cs
+D:\Projects\Cars App\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.csproj.CoreCompileInputs.cache
+D:\Projects\Cars App\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.dll
+D:\Projects\Cars App\CarsApp\CarsApp\obj\Debug\net8.0\refint\CarsApp.dll
+D:\Projects\Cars App\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.pdb
+D:\Projects\Cars App\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.genruntimeconfig.cache
+D:\Projects\Cars App\CarsApp\CarsApp\obj\Debug\net8.0\ref\CarsApp.dll
