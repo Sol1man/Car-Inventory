@@ -18,7 +18,6 @@ namespace CarsApp
 
         public Car()
         {
-
         }
 
         public Car(int id, string name, Colors color, Types type, int year, double price )
@@ -32,12 +31,13 @@ namespace CarsApp
         }
         public override string ToString()
         {
+            //creating car data string in csv format
             Window.CenterText("Car Details");
             Console.WriteLine("ID, Name, Color, Type, Year, Price.");
-            string CarInfo = $"{Id}, {Name}, {Color}, {Type}, {Year}, {Price}";
-            Console.WriteLine(CarInfo);
+            string carInfo = $"{Id}, {Name}, {Color}, {Type}, {Year}, {Price}";
+            Console.WriteLine(carInfo);
 
-            return base.ToString();
+            return carInfo;
         }
         public Car FindCarWithID(List <Car> carList, int id)
         {

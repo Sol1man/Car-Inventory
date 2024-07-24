@@ -35,7 +35,6 @@ namespace CarsApp
             Console.WriteLine("3. DELETE an existing car");
             Console.WriteLine("4. SEARCH for an existing car");
             Console.WriteLine("5. DISPLAY all existing cars");
-            Console.WriteLine("6. EXIT");
 
         }
         public static char GetUserInput()

@@ -70,8 +70,15 @@ namespace CarsApp
         public void EditCar(int id)
         {
             //search for the car in cars list using the ID
-               Car carToEdit = carList.FirstOrDefault(c => c.Id == id);   
 
+            Car carToEdit = carList.FirstOrDefault(c => c.Id == id);   
+
+            /*Car carToEdi = new Car();
+            for (int i = 0; i < carList.Count; i++) {
+                if (carList[i].Id == id)
+                {
+                    carToEdit = carList[i];
+                }*/
             //Check if car id not found
             if (carToEdit == null)
             {
@@ -82,10 +89,9 @@ namespace CarsApp
             //adding new car name (or leave it the same)
             Console.Write("New Name (leave blank to keep the current name): ");
             string newName = Console.ReadLine();
-            if (!string.IsNullOrEmpty(newName))
-            {
-                carToEdit.Name = newName;
-            }
+
+
+            carToEdit.Name = string.IsNullOrEmpty(newName) ? carToEdit.Name : newName;
 
             //adding new car data
             Console.Write("New Color: ");
@@ -96,19 +102,15 @@ namespace CarsApp
             int newYear = Convert.ToInt32(Console.ReadLine());
             Console.Write("New Price: ");
             double newPrice = Convert.ToDouble(Console.ReadLine());
-            //TODO change car data with new car data 
-            //Car newCar = Car()
+            //changing car data with new car data 
+            carToEdit.Color = newColor;
+            carToEdit.Type = newType;   
+            carToEdit.Year = newYear;
+            carToEdit.Price = newPrice;
+            
             Console.WriteLine("Car Edited Successfully!");
         }
-  /*      public void EditCarWindow()
-        {
-            Console.Clear();
-            Window window = new Window();
-            Console.WriteLine("Editing Car data:");
-            Console.Write("Enter Car ID: ");
-            int id = Convert.ToInt32(Console.ReadLine());
-            EditCar(id);
-        }*/
+
         public void DeleteCar(int id)
         {
             //search for the car in cars list using the ID
@@ -123,9 +125,12 @@ namespace CarsApp
             Console.WriteLine("Car Deleted Successfully!");
 
         }
-        public void SearchCar()
+        public Car SearchCar(int id)
         {
             Window window = new Window();
+
+            //search for the car in cars list using the ID
+            return carList.FirstOrDefault(c => c.Id == id);
 
         }
     }
