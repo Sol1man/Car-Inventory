@@ -125,7 +125,7 @@ namespace CarsApp
             Console.WriteLine("Car Deleted Successfully!");
 
         }
-        public Car SearchCar(int id)
+        public Car SearchByCarId(int id)
         {
             Window window = new Window();
 
@@ -133,5 +133,13 @@ namespace CarsApp
             return carList.FirstOrDefault(c => c.Id == id);
 
         }
+        //TODO Search by car name
+        public List<Car> SearchByCarName(string name)
+        {
+
+            Window window = new Window();
+            return carList.Where(car => car.Name.ToLower().Contains(name.ToLower())).ToList();
+        }
+
     }
 }

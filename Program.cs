@@ -45,11 +45,28 @@
                             break;
                         case '4':
                             window.RenderSearchWindow();
-                            Console.WriteLine("Deleting a Car:");
-                            Console.Write("Enter Car ID: ");
-                            int searchId = Convert.ToInt32(Console.ReadLine());
-                            Car car = inventory.SearchCar(searchId);
-                            car.ToString();
+                            Console.WriteLine("Searching a Car:");
+                            Console.WriteLine("Search by: ");
+                            Console.WriteLine("1.Car ID            2. Car Name");
+
+                            int searchOption = Convert.ToInt32(Console.ReadLine());
+                            if (searchOption == 1)
+                            {
+                                Console.Write("Enter Car ID: ");
+                                int id = Convert.ToInt32(Console.ReadLine());
+                                Car car = inventory.SearchByCarId(id);
+                                car.ToString();
+                            }
+                            else
+                            {
+                                Console.Write("Enter Car Name: ");
+                                string name = Console.ReadLine();
+                                List<Car> searchedCars = inventory.SearchByCarName(name);
+                                foreach (Car car in searchedCars)
+                                {
+                                    car.ToString();
+                                }
+                            }
                             break;
                         case '5':
                             inventory.DisplayAllCars();
@@ -59,8 +76,8 @@
                             break;
 
                     }
-                    //Console.WriteLine("Press any key to continue...");
-                    //Console.ReadKey(true);
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey(true);
                 }
             }
 
