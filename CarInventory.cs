@@ -16,6 +16,7 @@ namespace CarsApp
 
         public void DisplayAllCars()
         {
+            //Check if there is no cars in the database
             if (carList.Count == 0)
             {
                 Console.WriteLine("No Cars at the Inventory");
@@ -37,6 +38,7 @@ namespace CarsApp
         }
         public Car CreateCar()
         {
+            //Read Cars info
             Console.WriteLine("Adding New Car:");
             Console.Write("Name: ");
             string name = Console.ReadLine();
@@ -59,6 +61,7 @@ namespace CarsApp
         }
         public void AddCar(Car car)
         {
+            //Add new car to the database
             if (car == null)
             {
                 throw new ArgumentNullException(nameof(car), "Car cannot be null");
@@ -73,12 +76,6 @@ namespace CarsApp
 
             Car carToEdit = carList.FirstOrDefault(c => c.Id == id);   
 
-            /*Car carToEdi = new Car();
-            for (int i = 0; i < carList.Count; i++) {
-                if (carList[i].Id == id)
-                {
-                    carToEdit = carList[i];
-                }*/
             //Check if car id not found
             if (carToEdit == null)
             {
@@ -86,14 +83,14 @@ namespace CarsApp
                 return;
             }
 
-            //adding new car name (or leave it the same)
+            //Add new car name (or leave it the same)
             Console.Write("New Name (leave blank to keep the current name): ");
             string newName = Console.ReadLine();
 
 
             carToEdit.Name = string.IsNullOrEmpty(newName) ? carToEdit.Name : newName;
 
-            //adding new car data
+            //Add new car data
             Console.Write("New Color: ");
             Colors newColor = Car.SetColor();
             Console.Write("New Type: ");
@@ -102,7 +99,7 @@ namespace CarsApp
             int newYear = Convert.ToInt32(Console.ReadLine());
             Console.Write("New Price: ");
             double newPrice = Convert.ToDouble(Console.ReadLine());
-            //changing car data with new car data 
+            //Change car data with new car data 
             carToEdit.Color = newColor;
             carToEdit.Type = newType;   
             carToEdit.Year = newYear;
@@ -113,7 +110,7 @@ namespace CarsApp
 
         public void DeleteCar(int id)
         {
-            //search for the car in cars list using the ID
+            //Search for the car in cars list using the ID
             Car carToDelete = carList.FirstOrDefault(c => c.Id == id);
 
             //Check if car id not found
@@ -133,11 +130,11 @@ namespace CarsApp
             return carList.FirstOrDefault(c => c.Id == id);
 
         }
-        //TODO Search by car name
         public List<Car> SearchByCarName(string name)
         {
-
             Window window = new Window();
+
+            //search for the car in cars list using the ID
             return carList.Where(car => car.Name.ToLower().Contains(name.ToLower())).ToList();
         }
 

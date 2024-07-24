@@ -9,13 +9,14 @@ namespace CarsApp
 {
     internal class Car
     {
-        public int Id;
+        public int Id; //Unique identifier for each car
         public string Name;
         public Colors Color;
         public Types Type;
         public int Year;
         public double Price;
 
+        //Default constructor
         public Car()
         {
         }
@@ -53,6 +54,8 @@ namespace CarsApp
             return null;
 
         }
+
+        //Get user input for the car type and return corresponding enum value
         public static Types SetType()
         {
             Types carType;
@@ -81,6 +84,8 @@ namespace CarsApp
             }
             return carType;
         }
+
+        //Get user input for the car type and return corresponding enum value
         public static Colors SetColor()
         {
             Colors carColor;
@@ -89,7 +94,6 @@ namespace CarsApp
             Console.WriteLine("2. White");
             Console.WriteLine("3. Red");
             Console.WriteLine("4. Blue");
-
 
             char choice = Window.GetUserInput();
 
@@ -114,6 +118,5 @@ namespace CarsApp
             }
             return carColor;
         }
-
     }
 }
