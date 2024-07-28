@@ -5,18 +5,20 @@
         //inicializing cars list
         static void Main(string[] args)
         {
-
+            string saveFolderPath = "D:/Projects/Cars App/CarsApp/CarsApp/cars.csv";
+            CarInventory inventory = new CarInventory();
+            inventory.LoadCarsFromCsv(saveFolderPath);
             bool continueProgram = true;
             while (continueProgram)
             {
                 //setting window UI 
                 Window window = new Window();
                 window.MainMenu();
-                CarInventory inventory = new CarInventory();
 
                 ConsoleKeyInfo keyInfo = Console.ReadKey(true); // Read key without showing it
                 if (keyInfo.Key == ConsoleKey.Escape)
                 {
+                    inventory.SaveCars(saveFolderPath);
                     continueProgram = false; // Exit the program loop
                     Console.WriteLine("Exiting Car Inventory System...");
                 }

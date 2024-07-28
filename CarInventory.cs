@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,8 +23,8 @@ namespace CarsApp
                 Console.WriteLine("No Cars at the Inventory");
                 return;
             }
-                Window.CenterText("All Cars Details" );
-                Window.CenterText($"There are {carList.Count} Cars in the  inventory");
+            Window.CenterText("All Cars Details");
+            Window.CenterText($"There are {carList.Count} Cars in the  inventory");
             foreach (Car car in carList)
             {
                 Window.CenterText("Car Id:" + car.Id);
@@ -52,9 +53,9 @@ namespace CarsApp
             double price = Convert.ToDouble(Console.ReadLine());
 
             int id = nextId;
-           /* if (Car.Id == null) 
-            { 
-            }*/
+            /* if (Car.Id == null) 
+             { 
+             }*/
             Car car = new Car(nextId, name, color, type, year, price);
             nextId++;
             return car;
@@ -74,7 +75,7 @@ namespace CarsApp
         {
             //search for the car in cars list using the ID
 
-            Car carToEdit = carList.FirstOrDefault(c => c.Id == id);   
+            Car carToEdit = carList.FirstOrDefault(c => c.Id == id);
 
             //Check if car id not found
             if (carToEdit == null)
@@ -101,10 +102,10 @@ namespace CarsApp
             double newPrice = Convert.ToDouble(Console.ReadLine());
             //Change car data with new car data 
             carToEdit.Color = newColor;
-            carToEdit.Type = newType;   
+            carToEdit.Type = newType;
             carToEdit.Year = newYear;
             carToEdit.Price = newPrice;
-            
+
             Console.WriteLine("Car Edited Successfully!");
         }
 
@@ -136,6 +137,64 @@ namespace CarsApp
 
             //search for the car in cars list using the ID
             return carList.Where(car => car.Name.ToLower().Contains(name.ToLower())).ToList();
+        }
+
+
+        //Files Functions
+  
+        public void SaveCars(string filePath)
+        {
+            using (var writer = new StreamWriter(filePath))
+            {
+                writer.WriteLine("Id,Name,Color,Type,Year,Price");
+                foreach (Car car in carList)
+                {
+                    writer.WriteLine(car.ToString());
+                }
+            }
+            Console.WriteLine("Cars saved Successfully!");
+        }
+        public void LoadCarsFromCsv(string filePath)
+        {
+            if (string.IsNullOrEmpty(filePath))
+            {
+                throw new ArgumentException("File path cannot be null or empty.");
+            }
+
+            if (!File.Exists(filePath))
+            {
+                Console.WriteLine($"File '{filePath}' not found. Car list remains unchanged.");
+                return;
+            }
+
+            carList.Clear(); // Clear existing car list before loading data from the file
+
+            using (var reader = new StreamReader(filePath))
+            {
+                reader.ReadLine();
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    string[] values = line.Split(',');
+
+                    if (values.Length != 6)
+                    {
+                        Console.WriteLine($"Loading Data Error: Invalid format in line: {line}");
+                        continue; // Skip invalid lines
+                    }
+
+                    int id = int.Parse(values[0]);
+                    string name = values[1];
+                    Colors color = (Colors)Enum.Parse(typeof(Colors), values[2]);
+                    Types type = (Types)Enum.Parse(typeof(Types), values[3]);
+                    int year = int.Parse(values[4]);
+                    double price = double.Parse(values[5]);
+
+                    carList.Add(new Car(id, name, color, type, year, price));
+                }
+            }
+
+            Console.WriteLine("Cars loaded successfully");
         }
 
     }
