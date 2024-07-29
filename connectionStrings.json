@@ -1,3 +1,8 @@
-"connectionStrings": {
-  "DefaultConnection": "Server=AHMEDH-DEVOP;Database=CarsDB;Encrypt=true;Integrated Security=True;TrustServerCertificate=true"
-} //"Data Source=DESKTOP-FR4K4CJ\\SQLEXPRESS;Initial Catalog=GamaHelpDesk;Integrated Security=true;Persist Security Info=True;User ID=mehad;Password=Mehad123;TrustServerCertificate=True;encrypt=true"
+{
+  "connectionStrings": {
+    "DefaultConnection": "Server=AHMEDH-DEVOP;Database=CarsDB;Encrypt=true;Integrated Security=True;TrustServerCertificate=true"
+  }
+}
+
+
+//"Data Source=DESKTOP-FR4K4CJ\\SQLEXPRESS;Initial Catalog=GamaHelpDesk;Integrated Security=true;Persist Security Info=True;User ID=mehad;Password=Mehad123;TrustServerCertificate=True;encrypt=true"

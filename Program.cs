@@ -1,11 +1,27 @@
-﻿namespace CarsApp
+﻿using System.Diagnostics;
+
+namespace CarsApp
 {
     internal class Program
     {
         //inicializing cars list
         static void Main(string[] args)
         {
-            string saveFolderPath = "D:/Projects/Cars App/CarsApp/CarsApp/cars.csv";
+            using (var context = new CarsContext())
+            {
+                //creates db if not exists 
+                //create entity objects
+                var car1 = new Car() {  Name = "Nissan", Year = 2020 };
+
+                //add entitiy to the context
+                context.CarList.Add(car1);
+
+                //save data to the database tables
+                context.SaveChanges();
+            }
+
+
+            /*string saveFolderPath = "D:/Projects/Cars App/CarsApp/CarsApp/cars.csv";
             CarInventory inventory = new CarInventory();
             inventory.LoadCarsFromCsv(saveFolderPath);
             bool continueProgram = true;
@@ -81,7 +97,7 @@
                     Console.WriteLine("Press any key to continue...");
                     Console.ReadKey(true);
                 }
-            }
+            }*/
 
         }
     }

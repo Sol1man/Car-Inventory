@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
@@ -7,14 +8,15 @@ using System.Threading.Tasks;
 
 namespace CarsApp
 {
-    internal class Car
+    public class Car
     {
-        public int Id; //Unique identifier for each car
-        public string Name;
-        public Colors Color;
-        public Types Type;
-        public int Year;
-        public double Price;
+        [Key]
+        public int Id { get; set; } //Unique identifier for each car
+        public string Name { get; set; }
+        public Colors Color { get; set; }
+        public Types Type { get; set; }
+        public int Year { get; set; }
+        public double Price { get; set; }
 
         //Default constructor
         public Car()
