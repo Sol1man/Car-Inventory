@@ -44,9 +44,9 @@ namespace CarsApp
             Console.Write("Name: ");
             string name = Console.ReadLine();
             Console.Write("Color: ");
-            Colors color = Car.SetColor();
+            Colors color = CarInventory.SetColor();
             Console.Write("Type: ");
-            Types type = Car.SetType();
+            Types type = CarInventory.SetType();
             Console.Write("Year: ");
             int year = Convert.ToInt32(Console.ReadLine());
             Console.Write("Price: ");
@@ -93,9 +93,9 @@ namespace CarsApp
 
             //Add new car data
             Console.Write("New Color: ");
-            Colors newColor = Car.SetColor();
+            Colors newColor = CarInventory.SetColor();
             Console.Write("New Type: ");
-            Types newType = Car.SetType();
+            Types newType = CarInventory.SetType();
             Console.Write("New Year: ");
             int newYear = Convert.ToInt32(Console.ReadLine());
             Console.Write("New Price: ");
@@ -195,6 +195,84 @@ namespace CarsApp
             }
 
             Console.WriteLine("Cars loaded successfully");
+        }
+
+        public Car FindCarWithID(List<Car> carList, int id)
+        {
+            foreach (Car car in carList)
+            {
+                if (car.Id == id)
+                {
+                    Car car2 = new Car();
+
+                    return car;
+                }
+            }
+            return null;
+
+        }
+        //Get user input for the car type and return corresponding enum value
+        public static Types SetType()
+        {
+            Types carType;
+            Console.WriteLine("Select car type:");
+            Console.WriteLine("1. Sedan");
+            Console.WriteLine("2. SUV");
+            Console.WriteLine("3. Hatchback");
+
+            char choice = Window.GetUserInput();
+
+            switch (choice)
+            {
+                case '1':
+                    carType = Types.Sedan;
+                    break;
+                case '2':
+                    carType = Types.SUV;
+                    break;
+                case '3':
+                    carType = Types.Hatchback;
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice. Type not set.");
+                    carType = Types.Invalid;
+                    break;
+            }
+            return carType;
+        }
+
+        //Get user input for the car type and return corresponding enum value
+        public static Colors SetColor()
+        {
+            Colors carColor;
+            Console.WriteLine("Select car type:");
+            Console.WriteLine("1. Black");
+            Console.WriteLine("2. White");
+            Console.WriteLine("3. Red");
+            Console.WriteLine("4. Blue");
+
+            char choice = Window.GetUserInput();
+
+            switch (choice)
+            {
+                case '1':
+                    carColor = Colors.Black;
+                    break;
+                case '2':
+                    carColor = Colors.White;
+                    break;
+                case '3':
+                    carColor = Colors.Red;
+                    break;
+                case '4':
+                    carColor = Colors.Blue;
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice. Color not set.");
+                    carColor = Colors.Invalid;
+                    break;
+            }
+            return carColor;
         }
 
     }
