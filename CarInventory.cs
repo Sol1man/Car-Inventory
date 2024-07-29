@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -12,20 +13,21 @@ namespace CarsApp
     internal class CarInventory
     {
         static List<Car> carList = new List<Car>();
-        static int nextId = 1;
+        //static int nextId = 1; needed only when dealing with files
 
 
         public void DisplayAllCars()
         {
+            int carCount = ContextController.Context.CarList.Count();
             //Check if there is no cars in the database
-            if (carList.Count == 0)
+            if (carCount == 0)
             {
                 Console.WriteLine("No Cars at the Inventory");
                 return;
             }
             Window.CenterText("All Cars Details");
-            Window.CenterText($"There are {carList.Count} Cars in the  inventory");
-            foreach (Car car in carList)
+            Window.CenterText($"There are {carCount} Cars in the  inventory");
+            foreach (Car car in ContextController.Context.CarList)
             {
                 Window.CenterText("Car Id:" + car.Id);
                 Console.WriteLine("Car Name: " + car.Name);
@@ -52,12 +54,7 @@ namespace CarsApp
             Console.Write("Price: ");
             double price = Convert.ToDouble(Console.ReadLine());
 
-            int id = nextId;
-            /* if (Car.Id == null) 
-             { 
-             }*/
-            Car car = new Car(nextId, name, color, type, year, price);
-            nextId++;
+            Car car = new Car(name, color, type, year, price);
             return car;
         }
         public void AddCar(Car car)
@@ -67,7 +64,8 @@ namespace CarsApp
             {
                 throw new ArgumentNullException(nameof(car), "Car cannot be null");
             }
-            carList.Add(car);
+            ContextController.Context.CarList.Add(car);
+            ContextController.Context.SaveChanges();
             Console.WriteLine("Car Added Successfully!");
         }
 
@@ -75,7 +73,7 @@ namespace CarsApp
         {
             //search for the car in cars list using the ID
 
-            Car carToEdit = carList.FirstOrDefault(c => c.Id == id);
+            Car carToEdit = ContextController.Context.CarList.FirstOrDefault(c => c.Id == id);
 
             //Check if car id not found
             if (carToEdit == null)
@@ -88,7 +86,6 @@ namespace CarsApp
             Console.Write("New Name (leave blank to keep the current name): ");
             string newName = Console.ReadLine();
 
-
             carToEdit.Name = string.IsNullOrEmpty(newName) ? carToEdit.Name : newName;
 
             //Add new car data
@@ -100,35 +97,37 @@ namespace CarsApp
             int newYear = Convert.ToInt32(Console.ReadLine());
             Console.Write("New Price: ");
             double newPrice = Convert.ToDouble(Console.ReadLine());
+            //----------------------------------------------------------------------------------------?
             //Change car data with new car data 
             carToEdit.Color = newColor;
             carToEdit.Type = newType;
             carToEdit.Year = newYear;
             carToEdit.Price = newPrice;
 
+            ContextController.Context.SaveChanges();
             Console.WriteLine("Car Edited Successfully!");
         }
 
         public void DeleteCar(int id)
         {
             //Search for the car in cars list using the ID
-            Car carToDelete = carList.FirstOrDefault(c => c.Id == id);
+            Car carToDelete = ContextController.Context.CarList.FirstOrDefault(c => c.Id == id);
 
             //Check if car id not found
             if (carToDelete == null)
             {
                 Console.WriteLine("Car not found.");
             }
-            carList.Remove(carToDelete);
+            ContextController.Context.Remove(carToDelete);
+            ContextController.Context.SaveChanges();
             Console.WriteLine("Car Deleted Successfully!");
-
         }
         public Car SearchByCarId(int id)
         {
             Window window = new Window();
 
             //search for the car in cars list using the ID
-            return carList.FirstOrDefault(c => c.Id == id);
+            return ContextController.Context.CarList.FirstOrDefault(c => c.Id == id);
 
         }
         public List<Car> SearchByCarName(string name)
@@ -136,12 +135,17 @@ namespace CarsApp
             Window window = new Window();
 
             //search for the car in cars list using the ID
-            return carList.Where(car => car.Name.ToLower().Contains(name.ToLower())).ToList();
+            return ContextController.Context.CarList.Where(car => car.Name.ToLower().Contains(name.ToLower())).ToList();
         }
 
+        //Clears all data in the Database
+        public void ClearAllCars()
+        {
+            ContextController.Context.RemoveRange(ContextController.Context.CarList);
+            ContextController.Context.SaveChanges();
+        }
 
         //Files Functions
-  
         public void SaveCars(string filePath)
         {
             using (var writer = new StreamWriter(filePath))

@@ -22,8 +22,15 @@ namespace CarsApp
         public Car()
         {
         }
-
-        public Car(int id, string name, Colors color, Types type, int year, double price )
+        public Car(string name, Colors color, Types type, int year, double price)
+        {
+            this.Name = name;
+            this.Color = color;
+            this.Type = type;
+            this.Year = year;
+            this.Price = price;
+        }
+        public Car(int id,string name, Colors color, Types type, int year, double price )
         {
             this.Id = id;
             this.Name = name;

@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace CarsApp
 {
@@ -7,22 +8,24 @@ namespace CarsApp
         //inicializing cars list
         static void Main(string[] args)
         {
-            using (var context = new CarsContext())
+            /*using (var context = new CarsContext())
             {
-                //creates db if not exists 
-                //create entity objects
-                var car1 = new Car() {  Name = "Nissan", Year = 2020 };
+                //create entity object
+                var car1 = new Car() {  Name = "Ford", Year = 2020, Color = Colors.White, Price = 100000, Type = Types.Sedan };
 
                 //add entitiy to the context
                 context.CarList.Add(car1);
 
                 //save data to the database tables
                 context.SaveChanges();
-            }
 
+                Car searchCar = context.CarList.FirstOrDefault(c => c.Name == "Ford");
+                Console.WriteLine(searchCar.Id); 
+            }*/
 
-            /*string saveFolderPath = "D:/Projects/Cars App/CarsApp/CarsApp/cars.csv";
             CarInventory inventory = new CarInventory();
+            //inventory.ClearAllCars();
+            string saveFolderPath = "D:/Projects/Cars App/CarsApp/CarsApp/cars.csv";
             inventory.LoadCarsFromCsv(saveFolderPath);
             bool continueProgram = true;
             while (continueProgram)
@@ -97,7 +100,7 @@ namespace CarsApp
                     Console.WriteLine("Press any key to continue...");
                     Console.ReadKey(true);
                 }
-            }*/
+            }
 
         }
     }
