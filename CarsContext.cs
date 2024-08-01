@@ -18,7 +18,7 @@ namespace CarsApp
         {
             var configuration = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile("connectionstrings.json")
+                    .AddJsonFile("E:\\Car-Inventory\\connectionStrings.json")
                     .Build();
 
             var connectionString = configuration.GetConnectionString("DefaultConnection");
