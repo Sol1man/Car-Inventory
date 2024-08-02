@@ -3,10 +3,21 @@
   "WorkspaceRootPath": "E:\\Car-Inventory\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E526BDFE-4AED-495F-B1FE-5058D3C2FE6F}|..\\Web API App\\API\\API.csproj|e:\\web api app\\api\\controllers\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E66C866F-4AF0-4042-9488-E0DF372ABE96}|CarsApp.csproj|e:\\car-inventory\\carinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E66C866F-4AF0-4042-9488-E0DF372ABE96}|CarsApp.csproj|solutionrelative:carinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E66C866F-4AF0-4042-9488-E0DF372ABE96}|CarsApp.csproj|e:\\car-inventory\\contextcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E66C866F-4AF0-4042-9488-E0DF372ABE96}|CarsApp.csproj|solutionrelative:contextcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E526BDFE-4AED-495F-B1FE-5058D3C2FE6F}|..\\Web API App\\API\\API.csproj|e:\\web api app\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E526BDFE-4AED-495F-B1FE-5058D3C2FE6F}|..\\Web API App\\API\\API.csproj|e:\\web api app\\api\\controllers\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E526BDFE-4AED-495F-B1FE-5058D3C2FE6F}|..\\Web API App\\API\\API.csproj|e:\\web api app\\api\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E66C866F-4AF0-4042-9488-E0DF372ABE96}|CarsApp.csproj|e:\\car-inventory\\carscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +28,6 @@
       "RelativeMoniker": "D:0:0:{E66C866F-4AF0-4042-9488-E0DF372ABE96}|CarsApp.csproj|solutionrelative:car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E66C866F-4AF0-4042-9488-E0DF372ABE96}|CarsApp.csproj|e:\\car-inventory\\carinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E66C866F-4AF0-4042-9488-E0DF372ABE96}|CarsApp.csproj|solutionrelative:carinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E526BDFE-4AED-495F-B1FE-5058D3C2FE6F}|..\\Web API App\\API\\API.csproj|e:\\web api app\\api\\api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
@@ -29,10 +36,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{E526BDFE-4AED-495F-B1FE-5058D3C2FE6F}|..\\Web API App\\API\\API.csproj|e:\\web api app\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E66C866F-4AF0-4042-9488-E0DF372ABE96}|CarsApp.csproj|e:\\car-inventory\\contextcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E66C866F-4AF0-4042-9488-E0DF372ABE96}|CarsApp.csproj|solutionrelative:contextcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E66C866F-4AF0-4042-9488-E0DF372ABE96}|CarsApp.csproj|e:\\car-inventory\\carsapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
@@ -54,50 +57,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Web API App\\API\\Program.cs",
-              "RelativeDocumentMoniker": "..\\Web API App\\API\\Program.cs",
-              "ToolTip": "E:\\Web API App\\API\\Program.cs",
-              "RelativeToolTip": "..\\Web API App\\API\\Program.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T14:28:48.824Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Car.cs",
-              "DocumentMoniker": "E:\\Car-Inventory\\Car.cs",
-              "RelativeDocumentMoniker": "Car.cs",
-              "ToolTip": "E:\\Car-Inventory\\Car.cs",
-              "RelativeToolTip": "Car.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAADwvycAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T12:27:02.022Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "connectionStrings.json",
-              "DocumentMoniker": "E:\\Car-Inventory\\connectionStrings.json",
-              "RelativeDocumentMoniker": "connectionStrings.json",
-              "ToolTip": "E:\\Car-Inventory\\connectionStrings.json",
-              "RelativeToolTip": "connectionStrings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-01T10:02:33.35Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\Web API App\\API\\appsettings.json",
               "RelativeDocumentMoniker": "..\\Web API App\\API\\appsettings.json",
@@ -110,7 +74,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "CarsContext.cs",
               "DocumentMoniker": "E:\\Car-Inventory\\CarsContext.cs",
               "RelativeDocumentMoniker": "CarsContext.cs",
@@ -123,20 +87,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CarInventory.cs",
-              "DocumentMoniker": "E:\\Car-Inventory\\CarInventory.cs",
-              "RelativeDocumentMoniker": "CarInventory.cs",
-              "ToolTip": "E:\\Car-Inventory\\CarInventory.cs",
-              "RelativeToolTip": "CarInventory.cs",
-              "ViewState": "AQIAAAUBAAAAAAAAAADwvxsBAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "CarController.cs",
+              "DocumentMoniker": "E:\\Web API App\\API\\Controllers\\CarController.cs",
+              "RelativeDocumentMoniker": "..\\Web API App\\API\\Controllers\\CarController.cs",
+              "ToolTip": "E:\\Web API App\\API\\Controllers\\CarController.cs",
+              "RelativeToolTip": "..\\Web API App\\API\\Controllers\\CarController.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAYwBoAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T07:47:55.95Z",
+              "WhenOpened": "2024-07-31T14:06:13.794Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "E:\\Web API App\\API\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "..\\Web API App\\API\\WeatherForecast.cs",
+              "ToolTip": "E:\\Web API App\\API\\WeatherForecast.cs",
+              "RelativeToolTip": "..\\Web API App\\API\\WeatherForecast.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T17:49:06.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ContextController.cs",
               "DocumentMoniker": "E:\\Car-Inventory\\ContextController.cs",
               "RelativeDocumentMoniker": "ContextController.cs",
@@ -149,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "API.csproj",
               "DocumentMoniker": "E:\\Web API App\\API\\API.csproj",
               "RelativeDocumentMoniker": "..\\Web API App\\API\\API.csproj",
@@ -162,20 +139,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CarController.cs",
-              "DocumentMoniker": "E:\\Web API App\\API\\Controllers\\CarController.cs",
-              "RelativeDocumentMoniker": "..\\Web API App\\API\\Controllers\\CarController.cs",
-              "ToolTip": "E:\\Web API App\\API\\Controllers\\CarController.cs",
-              "RelativeToolTip": "..\\Web API App\\API\\Controllers\\CarController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAcAAAAvAAAA",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Web API App\\API\\Program.cs",
+              "RelativeDocumentMoniker": "..\\Web API App\\API\\Program.cs",
+              "ToolTip": "E:\\Web API App\\API\\Program.cs",
+              "RelativeToolTip": "..\\Web API App\\API\\Program.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-31T14:06:13.794Z",
+              "WhenOpened": "2024-08-01T14:28:48.824Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
+              "Title": "connectionStrings.json",
+              "DocumentMoniker": "E:\\Car-Inventory\\connectionStrings.json",
+              "RelativeDocumentMoniker": "connectionStrings.json",
+              "ToolTip": "E:\\Car-Inventory\\connectionStrings.json",
+              "RelativeToolTip": "connectionStrings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-01T10:02:33.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Car.cs",
+              "DocumentMoniker": "E:\\Car-Inventory\\Car.cs",
+              "RelativeDocumentMoniker": "Car.cs",
+              "ToolTip": "E:\\Car-Inventory\\Car.cs",
+              "RelativeToolTip": "Car.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAADwvycAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T12:27:02.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "CarsApp.csproj",
               "DocumentMoniker": "E:\\Car-Inventory\\CarsApp.csproj",
               "RelativeDocumentMoniker": "CarsApp.csproj",
@@ -188,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": ".NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
               "DocumentMoniker": "E:\\Car-Inventory\\obj\\Debug\\net8.0\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
               "RelativeDocumentMoniker": "obj\\Debug\\net8.0\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
@@ -200,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "CarsApp",
               "DocumentMoniker": "E:\\Car-Inventory\\CarsApp.csproj",
               "RelativeDocumentMoniker": "CarsApp.csproj",
@@ -208,6 +211,25 @@
               "RelativeToolTip": "CarsApp.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-07-31T14:01:03.326Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CarInventory.cs",
+              "DocumentMoniker": "E:\\Car-Inventory\\CarInventory.cs",
+              "RelativeDocumentMoniker": "CarInventory.cs",
+              "ToolTip": "E:\\Car-Inventory\\CarInventory.cs",
+              "RelativeToolTip": "CarInventory.cs",
+              "ViewState": "AQIAAHwAAAAAAAAAAAAmwIoAAAB4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T07:47:55.95Z",
               "EditorCaption": ""
             }
           ]

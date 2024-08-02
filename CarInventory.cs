@@ -122,6 +122,7 @@ namespace CarsApp
             ContextController.Context.SaveChanges();
             Console.WriteLine("Car Deleted Successfully!");
         }
+
         public Car SearchByCarId(int id)
         {
             Window window = new Window();
@@ -281,3 +282,4 @@ namespace CarsApp
 
     }
 }
+ 
