@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CarsApp
 {
-    internal class CarInventory
+    public class CarInventory
     {
         static List<Car> carList = new List<Car>();
         //static int nextId = 1; needed only when dealing with files
